@@ -5,8 +5,9 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./backend/server.ts",
-    "dev": "nodemon ./backend/server.ts"
+    "dev": "nodemon ./backend/server.ts",
+    "build": "npx tsc",
+    "start": "node backend/lib/server.js"
   },
   "author": "",
   "license": "ISC",

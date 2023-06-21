@@ -1,0 +1,23 @@
+version: '3'
+services:
+  crm:
+    container_name: crm
+    restart: always
+    build:
+      context: ./
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+    volumes:
+      - ./:/code
+  db:
+    container_name: mongodb
+    image: mongodb/mongodb-community-server
+    ports:
+      - 27017:27017
+    volumes:
+      - './data:/data/db'
+volumes:
+ db:
+ crm:
